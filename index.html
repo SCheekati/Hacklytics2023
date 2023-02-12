@@ -1,120 +1,123 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Olympics Science</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">
-  </head>
+<head>
+  <title>ML Project Write-Up</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
   <body>
-     <!-- Navigation Bar -->
-    <div class="navbar">
-      <h1>Olympics Hacklytics Project</h1>
-      <nav>
-        <a href="#introduction">Introduction</a>
-        <a href="#approach">Approach</a>
-        <a href="#results">Results</a>
-      </nav>
-    </div> 
+    <nav>
+      <a href="#inspiration">Inspiration</a>
+      <a href="#how-we-built-it">How we built it</a>
+      <a href="#challenges">Challenges</a>
+      <a href="#accomplishments">Accomplishments</a>
+      <a href="#analysis">Analysis</a>
+      <a href="#whats-next">What's next?</a>
+      <a href="#references">References</a>
+      <a href="index1.html">Test Me!</a>
+    </nav>
+    <h1>The Olympic Standard - Story</h1>
+    <div class="section" id="inspiration">
+      <h2>Inspiration</h2>
+      <p>The Olympic Games are a symbol of hope, courage, and determination. The athletes who participate in these games represent the spirit of humanity, pushing the limits of what is possible and inspiring us all to be better. <br>
+        With this in mind, we embarked on a journey to understand the Olympics from a data perspective, and to uncover the hidden stories behind the games. <br>
 
-    <div class="background-image"></div>
-    <div class="back">
-      <div class="questiontitle">
-        Are you Olympic material?
+        Our team used the collection of data from 120 years of Olympic history and analyzed it to gain insights into this world of sports. <br>
+        We wanted to see what sets the medalists apart from the rest of the competitors, and what factors contribute to their success. <br>
         
-        <div class="sex">Sex:
-          <style class="inputboxsex"> 
-            select {
-              position: relative;
-              width: 290px;
-              height: 46px;
-              left: 50px;
-              top: 10px;
-      
-              background: #251c5f;
-              border: 4px solid #817E95;
-              color: white;
-              text-align: center;
-              font-family: 'DM Serif Display';
-              font-size: 20px;
-              border-radius: 20px;
-            }
-            </style>
-        </div>
-        <form action="/sex" method="post">
-          <select id="inputboxsex" name="inputboxsex">
-          <option value="blank"></option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          </select>
-        </form>
-        <!-- <div class="inputboxsex"></div> -->
-        <!-- <label for="sex">Sex:</label> -->
-        <!-- <inputboxsex type="text" id="inputboxsex" name="inputboxsex" placeholder="ex. Male, Female"> -->
-        <style> 
-          input[type=text] {
-            position: relative;
-            margin: 19px 0;
-            width: 290px;
-            height: 46px;
-            left: 50px;
-            top: 50px;
-            color: white;
-            font-size: 20px;
-            font-family: 'DM Serif Display';
-            text-align: center;
-            background: #251c5f;
-            border: 4px solid #817E95;
-            border-radius: 20px;
-          }
-          </style>
-        <div class="age">Age:
-        </div>
-        <form>
-          <input type="text" id="inputboxage" name="inputboxage">
-          <input type="text" id="inputboxheight" name="inputboxheight">
-          <input type="text" id="inputboxweight" name="inputboxweight">
-          <input type="text" id="inputboxcountry" name="inputboxcountry">
-        </form>
-        <!-- <div class="inputboxage"></div> -->
-        <div class="height">Height:</div>
-        <!-- <div class="inputboxheight"></div> -->
-        <div class="weight">Weight: </div>
-        <!-- <div class="inputboxweight"></div> -->
-        <div class="country">Country: </div>
-        <!-- <div class="inputboxcountry"></div> -->
-        <div class="submitbutton">Submit</div>
-      </div>
+        We built multiple classifiers and trained them on the data, including Logistic Regression, Decision Tree, Naive Bayes, K-Nearest Neighbors, Random Forest, SVM, and K-Means. <br>
+        Each of these models helped us uncover various aspects of the data and gave us a more complete understanding of what makes a successful Olympic athlete. <br>
+        
+        But we did not stop there. We also built a tool that analyzes the features of athletes and compares them to the other Olympic competitors. 
+        <br>With this tool, you can see how similar your features are to the athletes who have competed and get a sense of what it takes to be a champion. <br>
+        
+        At the heart of our project is a message of hope and inspiration. Our goal is to inspire and motivate individuals to work towards their own athletic goals,
+        <br> as the data demonstrates that anything is possible with determination and hard work. 
+        <br>Our goal is to inspire and motivate individuals to work towards their own athletic goals, as the data demonstrates that anything is possible with determination and hard work. </p>
     </div>
-    <div class="runner"></div>
-    
+  
+    <div class="section" id="how-we-built-it">
+      <h2>How we built it</h2>
+      <p>Olympic medal classification: <br>
 
-    <div class="title1">Olympic</div>
-    <div class="title2">Standard</div>
+        We built this machine learning project using Python libraries: Pandas, Matplotlib, Sklearn and LightGBM to analyze the Olympic dataset.  
+        <br>
+        We trained and tested several classifiers such as Logistic Regression, K-Nearest Neighbors, Decision Trees, Random Forest, Support Vector Machines, LightGBM, Multi-layer Perceptron, Gaussian Mixture Model, and Naive Bayes to predict the medals won by athletes based on their features.  
+        <br>
+        We also used feature selection to determine the most key features in the dataset and improve the accuracy of our predictions. We realized how ID, Name, Games, City, Team, Year, and Event were not the best contributors towards the prediction model using formal reasoning and a correlation map. 
+        <br>
+        Olympic Standard Analyzer: 
+        <br>
+        We utilized HTML, CSS, and Python to develop a website that delivers the user experience side of this project. As a user, not only can you review our analysis from our ML project but get insight as to how your athletic standard compares to the world champions. This is to show that Olympians are not people who are out of reach by the general public – for example, the ages in this data set ranged from 11 to 71 years old.  
+        <br>
+        Everything is hosted on github! Including this website (huge thanks to domain.com for the free domain) </p>
+    </div>
+  
+    <div class="section" id="challenges">
+      <h2>Challenges</h2>
+      <p>Data parsing and normalization: Parsing the Olympic dataset was straightforward, but normalizing the data was challenging due to the presence of NaN values. To handle this, we used various data imputation techniques to fill in missing values in a meaningful way. 
+        <br>
+        Determining data validity: One of the biggest challenges was determining how much data to use. Older data may not be as relevant in today's world, so it was crucial to determine a threshold for the data's validity. We made the decision to use data only up until a certain year and used trial and error and the frequency of athletes to determine the best cutoff year. 
+        <br>
+        Country names: Another challenge was the inconsistent naming of countries, particularly when it came to the "Team" feature. Some countries had changed their names or combined with others over time, which made it difficult to categorize the data. We found that the National Olympic Committee (NOC) 3-letter code was a reliable indicator of a country and used this instead of the "Team" feature. 
+        <br>
+        Multicollinearity: In some cases, we found that features were highly correlated with each other, leading to multicollinearity issues. This was particularly evident when using a neural network, which resulted in poor performance. To overcome this challenge, we chose to use a multi-layer perceptron (MLP) as our classifier. 
+        <br>
+        Feature selection: Finally, we faced the challenge of determining which features were most important for accurate predictions. This involved a trial-and-error process of trying different feature combinations and evaluating their impact on the classifier's accuracy. </p>
+    </div>
+  
+    <div class="section" id="accomplishments">
+      <h2>Accomplishments</h2>
+      <p>We ended up with 224864 unique rows of data after cleaning. With the use of feature-rich data and machine learning algorithms such as LightGBM, we achieved an impressive accuracy rate of 87%.<br>
+         More specific details regarding classifiers to be explored in the Analysis section. <br>
 
-    <!-- Scroll bar -->
-    <style>
-      /* width */
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
-      
-      /* Track */
-      ::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 5px #06002E;
-        border-radius: 10px;
-      }
-       
-      /* Handle */
-      ::-webkit-scrollbar-thumb {
-        background: #06002E;
-        border-radius: 10px;
-      }
-      
-      /* Handle on hover */
-      ::-webkit-scrollbar-thumb:hover {
-        background: #251c5f; 
-      }
-    </style>
-   
+        Additionally, we were able to create a full user interface to highlight how data is not only the focus of analysis but can also be interactive with each user. <br>
+        This truly brought our work with the dataset to life as we were able to repurpose the set to show the percentiles of height, age, weight based off personal specification.  <br>
+        
+        Our results have real-world applications as they can be applied to improve sports management and tracking systems for athletes, helping them to advance and reach their full potential. <br>
+        It reaches out to not only the Olympic population but also to other athletic competitions. <br>
+         This project serves as a testament to the incredible impact that machine learning and data analysis can have on the sports world, and we look forward to continuing our work in this field. </p>
+    </div>
+  
+    <div class="section" id="analysis">
+      <h2>Analysis</h2>
+      <p>
+
+        Decision Tree: The accuracy of 0.8180 is decent, but not the highest among the models tested. This could be because decision trees are prone to overfitting, meaning they may not generalize well to unseen data. Additionally, decision trees may struggle to capture complex relationships between features and target outputs. 
+        <br>
+        Naive Bayes: The accuracy of 0.8640 is very good, particularly given the simplicity of the Naive Bayes algorithm. Naive Bayes is a fast and efficient algorithm based on the Bayes theorem, which makes assumptions about the independence of features. When these assumptions are held, Naive Bayes can perform well. It is usually underrated for good reason. However, given one’s computing resources, it certainly gives some of the other classifiers a run for their money considering how resource demanding they are. 
+        <br>
+        K-Nearest Neighbors: The accuracy of 0.8598 is also very good, although not quite as high as Naive Bayes. KNN is a non-parametric algorithm that makes predictions based on the closest neighbors in the feature space. It can be effective in cases where there is a clear and well-defined notion of similarity, in our case with the Olympic dataset. 
+        <br>
+        Random Forest: The accuracy of 0.8555 is good, but not as high as some of the other models. Random Forest is an ensemble algorithm that combines multiple decision trees to produce a final prediction. The idea behind this approach is that by combining multiple trees, the algorithm can reduce the overfitting that can occur with individual trees. By itself, random forest did a good job. 
+        <br>
+        K-Means: The accuracy of 0.2014 is very low, and it is not surprising that K-Means did not perform well in this case. K-Means is a clustering algorithm that is used for unsupervised learning, and it is not well suited for prediction tasks like this. We sought to potentially cluster the data into 4 clusters: Gold, Silver, Bronze, and None, but the data itself was varying in density as a specific set of athletic features does not guarantee a specific medal outcome. Potentially exposes RNG within Olympics?  
+        <br>
+        SVM: The accuracy of 0.8668 is exceptionally good, and it is not surprising that SVM performed well on this dataset. SVM is a powerful and versatile algorithm that can handle both linear and non-linear decision boundaries. Also, SVM can be effective when there are a few features and many samples, as was the case with the Olympic dataset. 
+        <br>
+        LightGBM: The accuracy of 0.8724 is excellent, and it is the highest accuracy among all the models tested. LightGBM is a gradient boosting algorithm designed to handle large datasets and has been shown to be effective in various applications. Given its use of gradient-based one-side sampling and exclusive feature bundling techniques to reduce overfitting and make the algorithm more efficient, it is likely that LightGBM would be a desirable choice for future prediction tasks involving similar data. 
+        <br>
+        Multi-Layer Perceptron: The accuracy of 0.8670 is very good, and it is not surprising that a neural network performed well on this dataset. Neural networks are powerful algorithms that can capture complex relationships between features and target outputs. However, like in our case, it was resource demanding in use of the wide range of data and probably not the best choice for real-time prediction. </p>
+    </div>
+  
+    <div class="section" id="whats-next">
+      <h2>What's next?</h2>
+      <p>We would like to try out other techniques: combination of multiple models to achieve better prediction and more robust feature engineering <br>(given time I believe we can further optimize our features to reach the 0.9 threshold). <br>
+
+        Furthermore, adding a real-time predictive feature could be fun to be used to predict a medal. <br>
+        
+        Collaboration with experts. Working alongside sports scientists and medical professionals, I believe we can gain a deeper understanding of our domain and in turn improve the accuracy.<br> Overall, we are looking to make our resources and research available to a wider audience. We are here to prove a point: anyone can be an athlete. </p>
+    </div>
+  
+    <div class="section" id="references">
+      <h2>References</h2>
+      <p>Dataset: https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results <br>
+
+        Pandas: User Guide — pandas 1.5.3 documentation (pydata.org) <br>
+        
+        LGBM: Python API — LightGBM 3.3.2 documentation <br>
+        
+        Matplotlib: Plot types — Matplotlib 3.6.3 documentation <br>
+        
+        Scikit-learn: scikit-learn: machine learning in Python — scikit-learn 1.2.1 documentation </p>
+    </div>
   </body>
-</html>
+  </html>

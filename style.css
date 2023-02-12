@@ -21,7 +21,7 @@
   top: 240px;
   opacity: 60%;
 
-  background: url("../img/runner.png");
+  background: url("/img/runner.png");
  }
 
 
@@ -29,7 +29,7 @@
     position: absolute;
     left: 0px;
     top: 0px;
-    background: url("../img/homebackground.png");
+    background: url("/img/homebackground.png"); 
 
     height: 100%;
     width: 100%;
@@ -307,6 +307,12 @@
   body {
     font-family: arial;
     background-color: #06002E; /* light gray */
+  }
+  
+  .top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
   
   
