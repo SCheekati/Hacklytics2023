@@ -1,18 +1,23 @@
 /* Navigation Bar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: white;
-    text-align: center;
-  }
-  
-  .navbar a {
-    color: black;
-    text-decoration: none;
-    margin-right: 20px;
-  }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+nav a {
+  text-decoration: none;
+  color: #06002E;
+  padding: 10px;
+}
+
+/* Add styles for the content sections */
+.section {
+  padding: 20px;
+  text-align: center;
+}
   
   /* Page Content */
   .content {
@@ -22,13 +27,15 @@
   
   /* Color Scheme */
   h1 {
-    color: blue;
+    color: rgb(211, 199, 27);
     text-align: center;
+    font-size: 50px;
   }
   
   h2 {
-    color: rgb(0, 0, 0);
-
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 35px;
   }
   
   h3 {
@@ -36,12 +43,12 @@
   }
   
   p {
-    color: rgb(0, 94, 0);
+    color: rgb(56, 207, 106);
   }
   
   /* Additional Styling */
   body {
     font-family: arial;
-    background-color: #E8E8E8; /* light gray */
+    background-color: #06002E; 
   }
   
