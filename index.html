@@ -20,20 +20,73 @@
     <div class="back">
       <div class="questiontitle">
         Are you Olympic material?
-        <div class="sex">Sex: </div>
-        <div class="inputboxsex"></div>
-        <div class="age">Age: </div>
-        <div class="inputboxage"></div>
-        <div class="height">Height: </div>
-        <div class="inputboxheight"></div>
+        
+        <div class="sex">Sex:
+          <style class="inputboxsex"> 
+            select {
+              position: relative;
+              width: 290px;
+              height: 46px;
+              left: 50px;
+              top: 10px;
+      
+              background: #251c5f;
+              border: 4px solid #817E95;
+              color: white;
+              text-align: center;
+              font-family: 'DM Serif Display';
+              font-size: 20px;
+              border-radius: 20px;
+            }
+            </style>
+        </div>
+        <form>
+          <select id="inputboxsex" name="inputboxsex">
+          <option value="blank"></option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          </select>
+        </form>
+        <!-- <div class="inputboxsex"></div> -->
+        <!-- <label for="sex">Sex:</label> -->
+        <!-- <inputboxsex type="text" id="inputboxsex" name="inputboxsex" placeholder="ex. Male, Female"> -->
+        <style> 
+          input[type=text] {
+            position: relative;
+            margin: 19px 0;
+            width: 290px;
+            height: 46px;
+            left: 50px;
+            top: 50px;
+            color: white;
+            font-size: 20px;
+            font-family: 'DM Serif Display';
+            text-align: center;
+            background: #251c5f;
+            border: 4px solid #817E95;
+            border-radius: 20px;
+          }
+          </style>
+        <div class="age">Age:
+        </div>
+        <form>
+          <input type="text" id="inputboxage" name="inputboxage">
+          <input type="text" id="inputboxheight" name="inputboxheight">
+          <input type="text" id="inputboxweight" name="inputboxweight">
+          <input type="text" id="inputboxcountry" name="inputboxcountry">
+        </form>
+        <!-- <div class="inputboxage"></div> -->
+        <div class="height">Height:</div>
+        <!-- <div class="inputboxheight"></div> -->
         <div class="weight">Weight: </div>
-        <div class="inputboxweight"></div>
+        <!-- <div class="inputboxweight"></div> -->
         <div class="country">Country: </div>
-        <div class="inputboxcountry"></div>
+        <!-- <div class="inputboxcountry"></div> -->
         <div class="submitbutton">Submit</div>
       </div>
     </div>
     <div class="runner"></div>
+    
 
     <div class="title1">Olympic</div>
     <div class="title2">Standard</div>
@@ -61,7 +114,9 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #251c5f; 
       }
-      </style>
+    </style>
+    
+     
 
     <!-- Page Content -->
     <div class="content">
