@@ -1,0 +1,53 @@
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #06002E;
+    padding: 10px;
+  }
+  
+  /* Add styles for the content sections */
+  .section {
+    padding: 20px;
+    text-align: center;
+  }
+    
+    /* Page Content */
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    /* Color Scheme */
+    h1 {
+      color: rgb(211, 199, 27);
+      text-align: center;
+      font-size: 50px;
+    }
+    
+    h2 {
+      color: rgb(255, 255, 255);
+      text-align: center;
+      font-size: 35px;
+    }
+    
+    h3 {
+      color: black;
+    }
+    
+    p {
+      color: rgb(56, 207, 106);
+    }
+    
+    /* Additional Styling */
+    body {
+      font-family: arial;
+      background-color: #06002E; 
+    }
