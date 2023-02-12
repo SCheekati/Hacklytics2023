@@ -3,27 +3,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import dask.dataframe as dd
 import scipy.stats as stats
-from flask import Flask, render_template, url_for, flash, redirect
+from flask import Flask, render_template, url_for, flash, redirect, request
 from input import Form
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates', static_folder='static')
+pd.set_option('display.max_columns', None)
 
 app.config['SECRET_KEY'] = '1ed85cead2c5f2876601b299232255f1'
-
-@app.route("/", methods=['GET', 'POST'])
-def sportsStandard():
-    sportsForm = Form()
-    if sportsForm.validate_on_submit():
-        flash(f'Data accepted', 'success')
-        #return redirect()
-    return render_template('.html', form=sportsForm)
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-
-pd.set_option('display.max_columns', None)
 
 dtypes = {
     "ID": "int64",
@@ -44,11 +31,17 @@ dtypes = {
 
 }
 
+rtype = {
+    "NOC": "string",
+    "region": "string",
+    "notes": "string"
+}
+
+
 data = pd.read_csv("../../dataset/athlete_events.csv", dtype=dtypes)
 
-#print("Train size:", data.shape)
+regions = pd.read_csv("../../dataset/noc_regions.csv", dtype=rtype)
 
-#print(data.head())
 
 data = data.dropna(subset=['Age', "Weight", "Height"])
 data = data.astype({"Age": "int", "Weight": "float", "Height": "float"})
@@ -56,9 +49,7 @@ data = data.astype({"Age": "int", "Weight": "float", "Height": "float"})
 dataF = data.loc[data['Sex'] == "F"]
 dataM = data.loc[data['Sex'] == "M"]
 
-#print("mean", np.mean(dataF["Age"]))
 
-#print(stats.percentileofscore(dataF['Age'], 19, kind='rank'))
 
 name = ""
 sex = ""
@@ -69,9 +60,24 @@ country = ""
 
 dataC = None
 
-def input_name(inputname):
-    global name
-    name = inputname
+
+
+'''@app.route("/", methods=['GET', 'POST'])
+def sportsStandard():
+    if request.method == 'POST':
+        input_age(request.form.get())
+        input_sex(request.form.get())
+        input_height(request.form.get())
+        input_weight(request.form.get())
+        input_country(request.form.get())
+        #redirect(url_for('success', result_id=result.id))
+    return render_template('index.html')
+    '''
+
+#if __name__ == '__main__':
+#    app.run(debug=True)
+
+
 
 def input_sex(inputsex):
     global sex
@@ -86,33 +92,76 @@ def input_height(inputheight):
     global height
     height = inputheight
 
+def input_weight(inputweight):
+    global weight
+    weight = inputweight
 
 def input_country(inputcountry):
     global country
     global dataC
     country = inputcountry
-    dataC = data
+    dataC = data.loc[data['NOC'] == regions.loc[regions['region'] == country, 'NOC'].item()]
 
 
 def percentileAge(considSex=False, considCountry=False):
+    global age
+    global sex
     if not considSex and not considCountry:
-        stats.percentileofscore(data['Age'], age)
+        return stats.percentileofscore(data['Age'], age)
     elif not considSex:
-        stats.percentileofscore(data['Age'], age)
+        return stats.percentileofscore(dataC['Age'], age)
+    elif not considCountry:
+        if sex == 'F':
+            return stats.percentileofscore(dataF['Age'], age)
+        else:
+            return stats.percentileofscore(dataM['Age'], age)
+    else:
+        if sex == 'F':
+            dataFC = dataC.loc[dataC['Sex'] == "F"]
+            return stats.percentileofscore(dataFC['Age'], age)
+        else:
+            dataMC = dataC.loc[dataC['Sex'] == "M"]
+            return stats.percentileofscore(dataMC['Age'], age)
+
+def percentileHeight(considSex=False, considCountry=False):
+    global height
+    global sex
+    if not considSex and not considCountry:
+        return stats.percentileofscore(data['Height'], height)
+    elif not considSex:
+        return stats.percentileofscore(dataC['Height'], height)
+    elif not considCountry:
+        if sex == 'F':
+            return stats.percentileofscore(dataF['Height'], height)
+        else:
+            return stats.percentileofscore(dataM['Height'], height)
+    else:
+        if sex == 'F':
+            dataFC = dataC.loc[dataC['Sex'] == "F"]
+            return stats.percentileofscore(dataFC['Height'], height)
+        else:
+            dataMC = dataC.loc[dataC['Sex'] == "M"]
+            return stats.percentileofscore(dataMC['Height'], height)
 
 
+def percentileWeight(considSex=False, considCountry=False):
+    global weight
+    global sex
+    if not considSex and not considCountry:
+        return stats.percentileofscore(data['Weight'], weight)
+    elif not considSex:
+        return stats.percentileofscore(dataC['Weight'], weight)
+    elif not considCountry:
+        if sex == 'F':
+            return stats.percentileofscore(dataF['Weight'], weight)
+        else:
+            return stats.percentileofscore(dataM['Weight'], weight)
+    else:
+        if sex == 'F':
+            dataFC = dataC.loc[dataC['Sex'] == "F"]
+            return stats.percentileofscore(dataFC['Weight'], weight)
+        else:
+            dataMC = dataC.loc[dataC['Sex'] == "M"]
+            return stats.percentileofscore(dataMC['Weight'], weight)
 
 
-'''df_mean = np.mean(dataF["Age"])
-df_std = np.std(dataF["Age"])
-
-# Calculating probability density function (PDF)
-pdf = stats.norm.pdf(dataF["Age"].sort_values(), df_mean, df_std)
-
-# Drawing a graph
-plt.plot(dataF["Age"].sort_values(), pdf)
-plt.xlim([0, 100])
-plt.xlabel("Age", size=12)
-plt.ylabel("Frequency", size=12)
-plt.grid(True, alpha=0.3, linestyle="--")
-plt.show()'''
