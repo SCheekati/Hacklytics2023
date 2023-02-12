@@ -1,23 +1,284 @@
 /* Navigation Bar */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: rgb(255, 255, 255);
-}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #06002E;
+  }
+  
+  .navbar a {
+    color: black;
+    text-decoration: none;
+    margin-right: 20px;
+  }
 
-nav a {
-  text-decoration: none;
-  color: #06002E;
-  padding: 10px;
-}
+  /* running-297154__340 1 */
+ .runner {
+  position: absolute;
+  width: 435px;
+  height: 340px;
+  left: 650px;
+  top: 240px;
+  opacity: 60%;
 
-/* Add styles for the content sections */
-.section {
-  padding: 20px;
-  text-align: center;
-}
+  background: url("/img/runner.png");
+ }
+
+
+  .background-image {
+    position: absolute;
+    width: 1366px;
+    height: 768px;
+    left: 0px;
+    top: 0px;
+    background: url("/img/homebackground.png");
+
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    flex-direction: row;
+    flex-basis: 100%;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    /* padding-bottom: 1000px;
+    padding-left: 38px;
+    padding-right: 34px; */
+    display: flex;
+  }
+
+  .line {
+    position: absolute;
+    width: 1366px;
+    height: 0px;
+    left: 0px;
+    top: 35px;
+
+    border: 34px solid #251c5f;
+  }
+
+  .back {
+    background-color: #06002E;
+    /* background-color: #251c5f; */
+    width: 100%;
+    height: 1500px;
+  }
+  
+  /* Olympic */
+  .title1 {
+    position: absolute;
+    width: 321px;
+    height: 96px;
+    left: 131px;
+    top: 335px;
+
+    font-family: 'DM Serif Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 90px;
+    line-height: 96px;
+    /* identical to box height */
+
+    letter-spacing: 0.15em;
+
+    color: #817E95;
+  }
+
+  .title2 {
+    position: absolute;
+    width: 357px;
+    height: 96px;
+    left: 1200px;
+    top: 335px;
+
+    font-family: 'DM Serif Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 90px;
+    line-height: 96px;
+    /* identical to box height */
+
+    letter-spacing: 0.15em;
+
+    color: #817E95;
+  }
+
+  .questiontitle {
+    position: absolute;
+    width: 355px;
+    height: 41px;
+    left: 680px;
+    top: 900px;
+
+    font-family: 'DM Serif Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 41px;
+
+    color: #817E95;
+  }
+
+  .sex {
+    position: absolute;
+    width: 355px;
+    height: 41px;
+    left: -20px;
+    top: 103px;
+
+    font-family: 'DM Serif Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 41px;
+
+    color: #817E95;
+  }
+
+  .inputboxsex {
+    position: absolute;
+    width: 290px;
+    height: 46px;
+    left: 50px;
+    top: 103px;
+
+    background: #251c5f;
+    border: 4px solid #817E95;
+    border-radius: 20px;
+  }
+
+  .age {
+    position: absolute;
+    width: 355px;
+    height: 41px;
+    left: -25px;
+    top: 198px;
+
+    font-family: 'DM Serif Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 41px;
+
+    color: #817E95;
+  }
+
+  .inputboxage {
+    position: absolute;
+    width: 290px;
+    height: 46px;
+    left: 50px;
+    top: 198px;
+
+    background: #251c5f;
+    border: 4px solid #817E95;
+    border-radius: 20px;
+  }
+
+  .height {
+    position: absolute;
+    width: 355px;
+    height: 41px;
+    left: -55px;
+    top: 293px;
+
+    font-family: 'DM Serif Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 41px;
+
+    color: #817E95;
+  }
+
+  .inputboxheight {
+    position: absolute;
+    width: 290px;
+    height: 46px;
+    left: 50px;
+    top: 293px;
+
+    background: #251c5f;
+    border: 4px solid #817E95;
+    border-radius: 20px;
+  }
+
+  .weight {
+    position: absolute;
+    width: 355px;
+    height: 41px;
+    left: -60px;
+    top: 388px;
+
+    font-family: 'DM Serif Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 41px;
+
+    color: #817E95;
+  }
+
+  .inputboxweight {
+    position: absolute;
+    width: 290px;
+    height: 46px;
+    left: 50px;
+    top: 388px;
+
+    background: #251c5f;
+    border: 4px solid #817E95;
+    border-radius: 20px;
+  }
+
+  .country {
+    position: absolute;
+    width: 355px;
+    height: 41px;
+    left: -70px;
+    top: 483px;
+
+    font-family: 'DM Serif Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 41px;
+
+    color: #817E95;
+  }
+
+  .inputboxcountry {
+    position: absolute;
+    width: 290px;
+    height: 46px;
+    left: 50px;
+    top: 483px;
+
+    background: #251c5f;
+    border: 4px solid #817E95;
+    border-radius: 20px;
+  }
+
+  /* button */
+  .submitbutton {
+    position: absolute;
+    width: 255px;
+    height: 44px;
+    left: 30px;
+    top: 580px;
+
+    background: #817E95;
+    border-radius: 20px;
+
+    font-family: 'DM Serif Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 41px;
+    text-align: center;
+
+    color: #251C5F;
+  }
   
   /* Page Content */
   .content {
@@ -34,8 +295,6 @@ nav a {
   
   h2 {
     color: rgb(255, 255, 255);
-    text-align: center;
-    font-size: 35px;
   }
   
   h3 {
@@ -43,12 +302,14 @@ nav a {
   }
   
   p {
-    color: rgb(56, 207, 106);
+    color: rgb(0, 64, 94);
   }
-  
-  /* Additional Styling */
+
+   /* Additional Styling */
   body {
     font-family: arial;
-    background-color: #06002E; 
+    background-color: #06002E; /* light gray */
   }
+  
+  
   
