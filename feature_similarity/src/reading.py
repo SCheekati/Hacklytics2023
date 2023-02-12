@@ -62,7 +62,7 @@ dataC = None
 
 
 
-'''@app.route("/", methods=['GET', 'POST'])
+@app.route("/", methods=['GET', 'POST'])
 def sportsStandard():
     if request.method == 'POST':
         input_age(request.form.get())
@@ -72,10 +72,13 @@ def sportsStandard():
         input_country(request.form.get())
         #redirect(url_for('success', result_id=result.id))
     return render_template('index.html')
-    '''
 
-#if __name__ == '__main__':
-#    app.run(debug=True)
+@app.route("/background")
+def background():
+    return render_template('background.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 
