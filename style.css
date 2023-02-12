@@ -27,8 +27,6 @@
 
   .background-image {
     position: absolute;
-    width: 1366px;
-    height: 768px;
     left: 0px;
     top: 0px;
     background: url("../img/homebackground.png");
@@ -36,7 +34,7 @@
     height: 100%;
     width: 100%;
     background-position: center;
-    background-size: cover;
+    background-size: 100%;
     flex-direction: row;
     flex-basis: 100%;
     justify-content: space-evenly;

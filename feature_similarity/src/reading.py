@@ -62,15 +62,17 @@ dataC = None
 
 
 
-@app.route("/", methods=['GET', 'POST'])
+'''@app.route("/", methods=['GET', 'POST'])
 def sportsStandard():
     if request.method == 'POST':
-        input_age(request.form.get())
-        input_sex(request.form.get())
-        input_height(request.form.get())
-        input_weight(request.form.get())
-        input_country(request.form.get())
-        #redirect(url_for('success', result_id=result.id))
+        age = request.form.get("inputboxage")
+        sex = request.form.get("inputboxsex")
+        height = request.form.get("inputboxheight")
+        weight = request.form.get("inputboxweight")
+        country = request.form.get("inputboxcountry")
+        print(age, sex, height, weight, country)
+        print(percentileAge(age, sex, False, False))
+        return render_template('index.html')
     return render_template('index.html')
 
 @app.route("/background")
@@ -78,7 +80,7 @@ def background():
     return render_template('background.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True)'''
 
 
 
@@ -106,9 +108,7 @@ def input_country(inputcountry):
     dataC = data.loc[data['NOC'] == regions.loc[regions['region'] == country, 'NOC'].item()]
 
 
-def percentileAge(considSex=False, considCountry=False):
-    global age
-    global sex
+def percentileAge(age, sex, considSex=False, considCountry=False):
     if not considSex and not considCountry:
         return stats.percentileofscore(data['Age'], age)
     elif not considSex:
@@ -126,9 +126,8 @@ def percentileAge(considSex=False, considCountry=False):
             dataMC = dataC.loc[dataC['Sex'] == "M"]
             return stats.percentileofscore(dataMC['Age'], age)
 
-def percentileHeight(considSex=False, considCountry=False):
-    global height
-    global sex
+def percentileHeight(height, sex, considSex=False, considCountry=False):
+
     if not considSex and not considCountry:
         return stats.percentileofscore(data['Height'], height)
     elif not considSex:
@@ -147,9 +146,7 @@ def percentileHeight(considSex=False, considCountry=False):
             return stats.percentileofscore(dataMC['Height'], height)
 
 
-def percentileWeight(considSex=False, considCountry=False):
-    global weight
-    global sex
+def percentileWeight(weight, sex, considSex=False, considCountry=False):
     if not considSex and not considCountry:
         return stats.percentileofscore(data['Weight'], weight)
     elif not considSex:
@@ -166,5 +163,47 @@ def percentileWeight(considSex=False, considCountry=False):
         else:
             dataMC = dataC.loc[dataC['Sex'] == "M"]
             return stats.percentileofscore(dataMC['Weight'], weight)
+
+
+input_country("USA")
+print("Percentile of 20 year old", percentileAge(20, 'F', False, False))
+print("Percentile of 20 year old women", percentileAge(20, 'F', True, False))
+print("Percentile of 20 year old from USA", percentileAge(20, 'F', False, True))
+print("Percentile of 20 year old women from USA", percentileAge(20, 'F', True, True))
+print()
+
+print("Percentile of 170 cm men from USA", percentileHeight(170, "M", True, True))
+print("Percentile of 180 cm men from USA", percentileHeight(180, "M", True, True))
+print("Percentile of 190 cm men from USA", percentileHeight(190, "M", True, True))
+print()
+
+print("Percentile of 60kg men from USA", percentileWeight(60, "M", True, True))
+print("Percentile of 70kg men from USA", percentileWeight(60, "M", True, True))
+print("Percentile of 80kg men from USA", percentileWeight(60, "M", True, True))
+print()
+
+input_country("Japan")
+print("Percentile of 20 year old", percentileAge(20, 'F', False, False))
+print("Percentile of 20 year old women", percentileAge(20, 'F', True, False))
+print("Percentile of 20 year old from Japan", percentileAge(20, 'F', False, True))
+print("Percentile of 20 year old women from Japan", percentileAge(20, 'F', True, True))
+print()
+
+print("Percentile of 170 cm men from Japan", percentileHeight(170, "M", True, True))
+print("Percentile of 180 cm men from Japan", percentileHeight(180, "M", True, True))
+print("Percentile of 190 cm men from USA", percentileHeight(190, "M", True, True))
+print()
+
+print("Percentile of 60kg men from Japan", percentileWeight(60, "M", True, True))
+print("Percentile of 70kg men from Japan", percentileWeight(60, "M", True, True))
+print("Percentile of 80kg men from Japan", percentileWeight(60, "M", True, True))
+print()
+
+
+print("Percentile of 20 year old", percentileAge(20, 'F', False, False))
+print("Percentile of 20 year old women", percentileAge(20, 'F', True, False))
+print("Percentile of 20 year old from Japan", percentileAge(20, 'F', False, True))
+print("Percentile of 20 year old women from Japan", percentileAge(20, 'F', True, True))
+
 
 
