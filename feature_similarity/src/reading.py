@@ -205,5 +205,36 @@ print("Percentile of 20 year old women", percentileAge(20, 'F', True, False))
 print("Percentile of 20 year old from Japan", percentileAge(20, 'F', False, True))
 print("Percentile of 20 year old women from Japan", percentileAge(20, 'F', True, True))
 
+input_sex("W")
+input_age(20)
+input_weight(77.1)
+input_height(162.56)
+input_country("USA")
+
+print(f"Sex: {sex}, Age: {age}, Weight {weight} kg, Height: {height}, Country: {country}")
+print("Percentile of Age across the world:" percentileAge(sex, ))
+
+input_sex("W")
+input_age(25)
+input_weight(54)
+input_height(149.86)
+input_country("USA")
+
+input_sex("M")
+input_age(45)
+input_weight(93.85)
+input_height(182.88)
+input_country("USA")
+
+input_sex("W")
+input_age(27)
+input_weight(56)
+input_height(154.94)
+input_country("China")
 
 
+input_sex("M")
+input_age(32)
+input_weight(66)
+input_height(167.64)
+input_country("China")
