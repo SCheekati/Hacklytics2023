@@ -21,7 +21,7 @@
   top: 240px;
   opacity: 60%;
 
-  background: url("/img/runner.png");
+  background: url("../img/runner.png");
  }
 
 
@@ -31,7 +31,7 @@
     height: 768px;
     left: 0px;
     top: 0px;
-    background: url("/img/homebackground.png");
+    background: url("../img/homebackground.png");
 
     height: 100%;
     width: 100%;
